@@ -14,18 +14,19 @@ public class FlowEx28 {
         int input = 0;
         int answer = (int) (Math.random() * 100) + 1;
 
-
         Scanner scan = new Scanner(System.in);
 
+        System.out.println("answer : "+answer);
 
         while (true) {
             System.out.print("1~100사이의 정수를 입력하세요. >> ");
-            int num = scan.nextInt();
-            if (num < answer) {
+            input = scan.nextInt();
+
+            if (input < answer) {
                 System.out.println("Up");
-            } else if (num > answer) {
+            } else if (input > answer) {
                 System.out.println("Down");
-            } else if (num == answer) {
+            } else if (input == answer) {
                 break;
             }
 
@@ -34,3 +35,20 @@ public class FlowEx28 {
 }
 
 
+class FlowEx28_1 {
+    public static void main(String[] args) {
+        int input = 0;
+        int answer = (int) (Math.random() * 100) + 1;
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("answer : "+answer);
+
+        while (true) {
+            System.out.print("1~100사이의 정수를 입력하세요. >> ");
+            input = scan.nextInt();
+
+            if(input == answer){break;}
+            System.out.println(input < answer ? "up":"down");
+        } System.out.println("정답");
+    }
+}

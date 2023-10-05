@@ -2,7 +2,8 @@ package com.green.day6.ch4;
 
 import java.util.Scanner;
 
-public class DoWhile { //강사님은 안씀, 아래 While은 같은 방법
+public class DoWhile { //강사님은 안씀, 아래 While은 같은 방법, 최소한 한번은 실행함
+    //While을 반복문 들어가기 전에 조건식을 체크함 do While은 일단 실행하고 조건식을 체크함
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int sum = 0;
