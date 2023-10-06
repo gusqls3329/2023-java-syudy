@@ -9,7 +9,7 @@ public class Array2 {
             System.out.printf("arr1[%d]: %d\n", i, arr1[i]);
         }
         arr1 = arr2;   //셜로우 카피
-        //셜로우 카피 얕은복사 주소값복사 동등성 O, 동일성O
+        //셜로우 카피 얕은복사 주소값만 (=만)복사 동등성 O, 동일성O
         //딮 카피 : 건물을 복사 동등성 O,동일성X
 
         /*

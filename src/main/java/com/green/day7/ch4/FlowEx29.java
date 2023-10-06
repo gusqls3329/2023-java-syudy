@@ -44,7 +44,7 @@ class FlowEx29_R {
 class FlowEx29_R2 {
     public static void main(String[] args) {
 
-        for (int i = 1; i < 101; i++) {
+        for (int i = 1; i < 1001; i++) {
             System.out.printf("i=%d", i);
             int tmp = i;
             do {

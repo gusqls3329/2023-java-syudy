@@ -14,7 +14,7 @@ public class BreakContinue3 {
                 System.out.printf("i:%d - z:%d\n", i, z);
             }
         }
-        System.out.println("-------------------");
+        System.out.println("-------------------"); // continue+이름은 break와 같은 결과값이기 때문에 break를 사용
         def:
         for (int i = 0; i < 5; i++) {
 

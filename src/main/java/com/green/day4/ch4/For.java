@@ -10,11 +10,11 @@ a가 먼저 실행되어 b가 실행되는데 a가 ture일때 아래 System.out.
  */
 public class For {
     public static void main(String[] args) {
-        for (int i =0; i<5; i++) {
+        for (int i =0; i<2; i++) {
             System.out.println("안녕");
 
             int j = 0;
-            for (j =0; j<10;j++) {
+            for (j =0; j<3;j++) {
                 System.out.println("j: "+ j); // ++, --가 없으면 무한루프
             }
         }

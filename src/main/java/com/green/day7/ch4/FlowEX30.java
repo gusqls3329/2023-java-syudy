@@ -8,12 +8,14 @@ public class FlowEX30 {
     public static void main(String[] args) {
         int sum = 0;
         int i = 0;
-        for (i=0; i>=0; i++){
-            sum += i;
-            if (sum > 100) {break;}
+        final int TARGET = 100;
 
-        }System.out.printf("%d",i);
-
+        while (sum<TARGET){
+            System.out.printf("sum: %d\n: ", sum);
+            sum = sum + ++i;
+            System.out.printf("sum: %d, i : %d \n:", sum, i);
+        }
+        System.out.println("i: "+i);
     }
 }
 
@@ -23,7 +25,6 @@ class FlowEX30R {
         int i = 0;
         final int TARGET = 100;
         while (true){
-
             sum = sum + ++i;
             if(sum>TARGET){break;}
         }
