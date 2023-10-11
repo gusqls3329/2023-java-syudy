@@ -19,10 +19,11 @@ public class MultiArryEx4 {
                 {"chair", "의자"}
                 , {"computer", "컴퓨터"}
                 , {"integer", "정수"}
+                , {"double" , "실수"}
         };
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < words.length; i++) {
-            System.out.printf(" %s의 뜻은? >>\n ", words[i][0]);
+            System.out.printf("Q%d. %s의 뜻은? >>\n ", i+1, words[i][0]);
             String input = scan.nextLine();
             if (input.equals(words[i][1]) ){
                 System.out.println("정답입니다.\n");
@@ -30,8 +31,28 @@ public class MultiArryEx4 {
                 System.out.printf("틀렸습니다. 정답은 %s입니다.\n",words[i][1] );
             }
         }
-
-
-
+    }
+}
+class MultiArryEx4_1 {
+    public static void main(String[] args) {
+        String[][] words = {
+                {"chair", "의자"}
+                , {"computer", "컴퓨터"}
+                , {"integer", "정수"}
+                , {"double" , "실수"}
+        };
+        Scanner scan = new Scanner(System.in);
+        int i = 1;
+        for (String [] worsArr : words) {
+            System.out.printf("Q%d. %s의 뜻은? >>\n ", i++, worsArr[0]);
+            String input = scan.nextLine();
+            String expctedAnswer = worsArr[1];
+            if (!input.equals(expctedAnswer) ){
+                System.out.printf("틀렸습니다. 정답은 %s입니다.\n",expctedAnswer);
+                continue;
+            }else{
+                System.out.print("정답입니다.\n" );
+            }
+        }
     }
 }

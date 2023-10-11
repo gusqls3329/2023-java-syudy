@@ -18,7 +18,7 @@ public class ArrayEx19 {
                 , {41, 42, 43}
                 , {51, 52, 53}
         };
-        int [] sumArr = new int [score[0].length];
+        int[] sumArr = new int[score[0].length];
         System.out.println("번호\t국어\t영어\t수학\t총점\t평균\t");
 
 
@@ -28,15 +28,17 @@ public class ArrayEx19 {
             for (int a = 0; a < score[i].length; a++) {
                 int val = score[i][a];
                 sumArr[a] += val; // 국영수 의 점수를 더하기 위한것.
-                sum+= val;
+                sum += val;
                 System.out.printf("\t%d", val);
             }
-            float avg = (float)sum / score[i].length;
+            float avg = (float) sum / score[i].length;
             System.out.printf("\t%d\t%.1f\n", sum, avg);
-        } System.out.print("총점");
-        for(int val : sumArr) {
+        }
+        System.out.print("총점");
+        for (int val : sumArr) {
             System.out.printf("\t%d", val);
         }
         System.out.println();
     }
 }
+
