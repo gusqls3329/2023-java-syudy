@@ -13,7 +13,7 @@ public class BreakContinue2 {
         for(int i =0; i<5; i++){
 
             for (int z = 10; z<15; z++) {
-                if (z==13 || z==11) {continue;}
+                if (z==13 || z==11) {break;}
                 System.out.printf("i:%d - z:%d\n", i ,z);
             }
         } System.out.println("-------------------");

@@ -13,3 +13,4 @@ public class ArrayEx5 {
         System.out.printf("평균: "+ (double)sum/score.length );
     }
 }
+

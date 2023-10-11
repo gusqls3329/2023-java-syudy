@@ -13,19 +13,29 @@ public class ArrayEx7 {
 
         for (int i = 0; i < arr.length; i++) {
             arr[i] = i; //arr[i]=방위치, i=값
-            }
+        }
         System.out.println(Arrays.toString(arr));
         System.out.println("----------------");
         for (int i = 0; i < arr.length; i++) {
 
             int a = (int) ((Math.random() * arr.length));//배열의 처음부터 마지막 방 까지 나오게 하는것.
-            if (i==a){continue;} //
+            if (i == a) {
+                continue;
+            } //
 
-            int tmp =  arr[i];
+            int tmp = arr[i];
             arr[i] = arr[a];
             arr[a] = tmp;
+            /*
+            int x = 10, y = 20;
+            int temp = x;//A=10
+            x = y; //x=20
+            y = temp; //y = 10
+            */
         }
         System.out.println(Arrays.toString(arr));
 
     }
 }
+
+
