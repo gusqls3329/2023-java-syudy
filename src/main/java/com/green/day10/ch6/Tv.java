@@ -3,13 +3,14 @@ package com.green.day10.ch6;
 public class Tv {
     //day10.ch6.TvTest, TvTest2와 함께 보기.
 
-    // 속성 = 멤버 필드, property
-    String color;
-    boolean power;
-    int channel;
+    // 속성 = 멤버 필드, property ,
+    //전역변수인 멤버필드만 디폴드를 가지고 있음 , 디폴트 값이 없는건?????????????
+    String color; // 디폴드 : null
+    boolean power;// 디폴드 : false
+    int channel;// 디폴드 : 0
 
-    //메소드 = 멤버메소드
-    // 리턴 타입(=void), 메소드명(=power), 파라미터 (=())
+    /*메소드 = 멤버메소드
+    메소드 = 리턴 타입(=void), 메소드명(=power), 파라미터=매개변수 (=())*/
    /*
     void power () : 메소드의 선언부로 없을 수 없음, { power = !power;}구현부로 없을 수 있음
     호출시는 선언부만 작성 가능
@@ -19,8 +20,8 @@ public class Tv {
     void channelDown () { channel--;}
 }
  /*
-객체는 속성(명사)(값과관련된) + 메소드(동사)(움직임과 관련된)
-클래스 : 문서, 설계도, 설명
+객체는 속성(= 멤버필드, property//명사형식)(값과관련된) + 메소드( = 전역변수, 멤버메소드//동사형식)(움직임과 관련된)
+클래스 : 객체를 만드는 문서, 설계도, 설명
 객체 = Object, 인스턴스, Instance : 클래스를 보고 만듦.
 
 디폴트 값

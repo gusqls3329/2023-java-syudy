@@ -4,7 +4,7 @@ public class TvTest3 {
     public static void main(String[] args) {
         Tv tv1 = new Tv();
 
-        Tv tv2 = tv1;
+        Tv tv2 = tv1;// 셰도우카피,결과값이 같음.
 
         System.out.printf("tv1.channel: %d\n", tv1.channel); // 결과값  : 0
         tv1.channelUp();
