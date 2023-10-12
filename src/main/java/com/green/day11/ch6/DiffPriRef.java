@@ -12,15 +12,18 @@ public class DiffPriRef { // 기본형과 참조형의 차이점
         System.out.println("(2)nb.num: "+nb.num);
         changeVal(nb); // 타입이 맞는 changeVal가 넣어짐 그래서 changeVal(NumBox nb)가 실행
         System.out.println("(3)nb.num: "+nb.num); //
+
     }
     public static void changeVal(int num){ //타입이 다르면 changeVal처럼 이름을 2개 사용할 수 있다.
         System.out.println("changeVal-int");
         num = 10;
     }
 
-    public static void changeVal(NumBox nb){
+    public static void changeVal(NumBox dd){
         System.out.println("changeVal-NumBox");
-        nb.num = 10;
+
+        dd.num = 10;
+        dd= new NumBox();
     }
 }
 

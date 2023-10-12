@@ -22,6 +22,7 @@ public class MathdExam2Test {
         나머지> 없음
          */
         System.out.println(season);
+        System.out.println("--------------------");
 
     }
 }
