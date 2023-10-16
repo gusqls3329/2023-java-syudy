@@ -13,7 +13,7 @@ public class CardTest2 {
         Card[] cards1 = makeCard(); //cards와 다른 존재임.
 
         System.out.println(cards.length);
-        for (Card c : cards) {
+        for (Card c : cards) { //Card c : 카드객체 주소값
             c.printYourSelf(); //카드 주소 값만 담을 수 있는 것.
         }
 
