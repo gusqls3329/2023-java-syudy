@@ -6,7 +6,7 @@ public class DiffPriRef { // 기본형과 참조형의 차이점
         changeVal(num);
         System.out.println("num: "+num);
 
-        NumBox nb = new NumBox(); //맨아래 NumBox을 객체화함. nb 주소값이 저장됨.
+        NumBox nb = new NumBox(); //맨아래 NumBox을 객체화함. nb 주소값이 저장됨. NumBox nb : NumBox의 객체의 주소 값만 가질 수 있다. new NumBox() : 객체 생성할 때 사용
         System.out.println("(1)nb.num: "+nb.num);
         nb.num = 30; // 그속성에 30을 넣음.
         System.out.println("(2)nb.num: "+nb.num);
