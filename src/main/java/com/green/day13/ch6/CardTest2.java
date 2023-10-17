@@ -28,10 +28,13 @@ public class CardTest2 {
         for (int i = 0; i < kinds.length; i++) {
             for (int j = 1; j <= 13; j++) {
                 String number = getNumberFromInt(j);
-                Card c = new Card();
+                Card c = new Card();// c는 Card의 주소 값에 감>Card에 kind와 number을 담을 수 있는 자리가 생김.
+
                 c.kind = kinds[i];
                 c.number = number;
-                cards[cnt++] = c;
+
+                cards[cnt++] = c;// c엔 주소값이 담겨져 있음, 주소값이 담아져 있다면 class안에있는 속성을 다 사용할 수 있다.
+                                 // c는 cards[]의 주소 값에 복사됨 >
                 //cards[(i*13)+(j-1)] = c;
             }
         }
@@ -51,20 +54,6 @@ public class CardTest2 {
                 return "K";
         }
         return String.valueOf(num); //정수를 문자열로
-    }
-
-    public class CardTest2_1 {
-        public static void main(String[] args) {
-            Card[] cards = makeCard();
-            System.out.println(cards.length);
-
-
-
-
-        }
-
-
-
     }
 }
 /*
