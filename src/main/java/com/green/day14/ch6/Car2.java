@@ -11,10 +11,10 @@ public class Car2 {
 
     }
 
-    public Car2(Car2 c1) {
-        this.color = c1.color;
-        this.gearType = c1.gearType;
-        this.door = c1.door;
+    public Car2(Car2 car2) {
+        color = car2.color;
+        gearType = car2.gearType;
+        door = car2.door;
     }
 
     public void printMySelf() {
