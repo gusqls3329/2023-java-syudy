@@ -1,7 +1,7 @@
 package com.green.day14.ch6;
 
 public class CardDeck {
-    Card[] cards;
+    Card[] cards; //배열 Card의 주소값을 가짐
 
     public CardDeck() {
         cards = new Card[52];
@@ -10,12 +10,11 @@ public class CardDeck {
         for (int i = 0; i < patterns.length; i++) {
             String pattern = patterns[i];
             for (int j = 1; j <= 13; j++) {
-                String drnomination = getNumberFromInt(j);
-                Card c = new Card(pattern, drnomination);
+                String denomination = getNumberFromInt(j);
+                Card c = new Card(pattern, denomination);
                 cards[idx++] = c;
             }
         }
-
     }
 
     public void printAll() {
@@ -33,7 +32,8 @@ public class CardDeck {
                 cards[rIdx] = null;
                 break;
             }
-        }return c;
+        }
+        return c;
     }
 
     private String getNumberFromInt(int num) { //private은 같은 class에서만 사용가능,외부에서 주소 값을 가지고 있어도 사용불가
