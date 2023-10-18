@@ -29,7 +29,7 @@ class Car2Test {
         c1.gearType = "manual";
         c1.door = 5;
 
-        Car2 c2 = new Car2(c1);
+        Car2 c2 = new Car2(c1); //주소값이 다름
 
 
         c1.printMySelf(); //color=black, gearType=manual, door=5

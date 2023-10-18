@@ -26,7 +26,8 @@ public class Data1 {
         value3 = c;
     }
 
-    public void printMySelf() {
+    public void printMySelf() { //생성자는 객체를 생성할때만 사용가능, 메소드에서는 생성자를 사용할 수 없음 new를 하였을때만 사용가능
+
         System.out.printf("value: %d, value2: %d, value3: %d\n", value, value2, value3);
 
     }
@@ -37,9 +38,9 @@ public class Data1 {
 
 class ConstructorTest {
     public static void main(String[] args) {
-        Data1 data1 = new Data1(); //생성자 호출이지만 Data1에는 생성자가 없다
+        Data1 data1 = new Data1();
         data1.printMySelf();
-        Data1 data1_2 = new Data1(10, 20, 30); // private으로 감춰졌을때, 바로 사용 가능
+        Data1 data1_2 = new Data1(10, 20, 30);
         data1_2.printMySelf();
 
     }
