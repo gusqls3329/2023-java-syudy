@@ -45,8 +45,13 @@ class Deck{
     public Card pick(int idx){
         System.out.println(idx);
        return cardArr[idx];
+    }
 
-       int a = (int)
+    public Card pick(){
+
+        return cardArr[(int)(Math.random()*CARD_NUM)];
+
+
     }
 
 
@@ -79,7 +84,8 @@ public class DeckTest {
         Deck deck = new Deck(); //카드객체 주소값
         Card c1 = deck.pick(51);
         System.out.println(c1);
-        Card c2 = deck.pick();
+        Card c3 = deck.pick();
+        System.out.println(c3);
 
 
     }
