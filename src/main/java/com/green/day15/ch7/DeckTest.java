@@ -17,7 +17,7 @@ class Card{
         number = n2;
     }
     @Override
-    public String toString(){
+    public String toString(){ //object가 가진 것을 재정의
        // return "kind:" +kind +"\tnumber:" +number;
         return String.format("kind: %d, number: %d", kind,number);
     }
@@ -48,12 +48,21 @@ class Deck{
     }
 
     public Card pick(){
-
-        return cardArr[(int)(Math.random()*CARD_NUM)];
-
-
+        return cardArr[(int)(Math.random()*CARD_NUM)]; // 카드 배열안에 둠
     }
 
+    void shuffle(){
+
+        for (int i = 0; i < CARD_NUM; i++) {
+            int randomIdx = (int)(Math.random()*CARD_NUM); // 랜덤 값을 만듬(위 랜덤_배열이랑 다름)
+            Card tmp = cardArr [i];
+            cardArr[i] = cardArr[randomIdx];
+            cardArr[randomIdx] = tmp;
+        }
+        for(Card card : cardArr){
+            System.out.println(card);
+        }
+    }
 
 
 }
@@ -82,11 +91,7 @@ public class DeckTest {
         System.out.println("-------------------");
 
         Deck deck = new Deck(); //카드객체 주소값
-        Card c1 = deck.pick(51);
-        System.out.println(c1);
-        Card c3 = deck.pick();
-        System.out.println(c3);
-
+        deck.shuffle();
 
     }
 }
