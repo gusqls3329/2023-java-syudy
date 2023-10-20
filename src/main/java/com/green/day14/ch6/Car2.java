@@ -1,39 +1,35 @@
 package com.green.day14.ch6;
 
-import javax.lang.model.util.Elements;
-
 public class Car2 {
     String color;
     String gearType;
     int door;
-
-    public Car2() {
-
+    public Car2(){
+        this("w");
+    }
+    public Car2(String color){
+        this(color,"o",4);
     }
 
-    public Car2(Car2 car2) {
-        color = car2.color;
-        gearType = car2.gearType;
-        door = car2.door;
+    public Car2(String color, String gearType,int door){
+        this.color = color;
+        this.gearType = gearType;
+        this.door = door;
     }
 
-    public void printMySelf() {
+
+    void printMySelf(){
         System.out.printf("color=%s, gearType=%s, door=%d\n", color, gearType, door);
     }
+
 }
-
-class Car2Test {
+class CarTest1 {
     public static void main(String[] args) {
-        Car2 c1 = new Car2();
-        c1.color = "black";
-        c1.gearType = "manual";
-        c1.door = 5;
+        Car2 car1 = new Car2();  //w, o, 4
+        Car2 car2 = new Car2("blue");
 
-        Car2 c2 = new Car2(c1); //주소값이 다름
-
-
-        c1.printMySelf(); //color=black, gearType=manual, door=5
-        c2.printMySelf(); //color=black, gearType=manual, door=5
+        car1.printMySelf();
+        car2.printMySelf();
 
     }
 }
