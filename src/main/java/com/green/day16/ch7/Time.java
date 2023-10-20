@@ -32,16 +32,17 @@ public class Time {
     public void setMinute(int minute){
         this.minute = minute;
     }
-    public void setMecond(int second){
+    public void setSecond(int second){
         this.second = second;
     }
+
     public int getHour(int hour){
        return this.hour;
     }
     public int getMinute(int minute){
         return this.minute;
     }
-    public int getMecond(int second){
+    public int getSecond(int second){
         return this.second;
     }
 
