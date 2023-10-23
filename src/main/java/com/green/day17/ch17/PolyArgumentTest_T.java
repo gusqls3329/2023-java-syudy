@@ -1,6 +1,6 @@
 package com.green.day17.ch17;
 
-public class PolyArgumentTest {
+public class PolyArgumentTest_T {
     public static void main(String[] args) {
         //Tv tv = new Tv();
         //System.out.println(tv);
@@ -11,9 +11,9 @@ public class PolyArgumentTest {
         int bonusPoint = c.getbonusPoint(); //20
         System.out.printf("price : %d, bonusPoint : %d\n", price, bonusPoint);
         Tv t = new Tv();
-        /*int price1 = c.getprice(); //200
-        int bonusPoint1 = c.getbonusPoint(); //20
-        System.out.printf("1. price : %d, bonusPoint : %d", price,bonusPoint);*/
+        int price1 = t.getprice(); //100
+        int bonusPoint1 = t.getbonusPoint(); //10
+        System.out.printf("1. price : %d, bonusPoint : %d", price1,bonusPoint1);
     }
 }
 
@@ -26,7 +26,7 @@ class PolyArgumentTest2 {
 
 
 
-        //buyer money가 부족하면 "잔액부족" money 값ㅇ느 마이너스 처리 x
+        // buyer money가 부족하면 "잔액부족" money 값ㅇ느 마이너스 처리 x
         // 잔액이 부족하지 않으면 Tv을/를 구입하셨습니다
     }
 }
@@ -35,7 +35,7 @@ class Buyer {
 
     void buy(Product product){ //Computer, Tv각각 하지말고 부모 클래스 활용
         //System.out.printf("제품명 : %s\n", product);
-        //System.out.printf("bonusPoint : %d\n", product.getbonusPoint());
+        // System.out.printf("bonusPoint : %d\n", product.getbonusPoint());
        // System.out.printf("pricer : %d\n", product.getprice());
         if (money < product.getprice()){
                 System.out.println("잔액부족");

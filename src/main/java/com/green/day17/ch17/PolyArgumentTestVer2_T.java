@@ -1,7 +1,5 @@
 package com.green.day17.ch17;
 
-import javax.xml.namespace.QName;
-
 public class PolyArgumentTestVer2 {
     public static void main(String[] args) {
         Product2 p = new Product2("제품명", 1000);
