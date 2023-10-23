@@ -12,7 +12,7 @@ class AnimalTest3{
         System.out.println(ani instanceof Cat);
         Cat cat = (Cat)ani;
         System.out.println("끝");
-        Dog dog = (Dog)ani; //강제 형변환하면 에러가 발생
+        //Dog dog = (Dog)ani; //강제 형변환하면 에러가 발생
     }
 }
 class AnimalTest2{
@@ -58,14 +58,14 @@ class AnimalTest2{
 class AnimalTest{
     public static void main(String[] args) {
         //1. 부모타입은 자식 객체 주소값을 담을 수  있다.
-
         Dog d1 = new Bulldog();
         Animal ani1 = new Bulldog();
         Animal ani2 = new Dog();
         Animal ani3 = new Cat();
-        //2. 자식타입은 부모객체 주소값을 담을 수 없다
 
+        //2. 자식타입은 부모객체 주소값을 담을 수 없다
         Dog d2 = new Dog();
+        //Bulldog bull1 = new Dog();
         //Bulldog bull2 = (Bulldog)d2;
         //System.out.println("끝");
 
