@@ -8,7 +8,7 @@ class Tv {
     void channelDown(){channel--;}
 }
 
-class CaptionTv extends Tv{ //extends Tv를 제외해도 외 tv의 자녀인걸 아는걸까?
+class CaptionTv extends Tv{
     boolean caption;
     void displayCaption(String text){
         if( caption){
