@@ -24,7 +24,7 @@ public class CardDeck {
     }
 
     public Card getCard() {
-        Card c = null;
+        Card c ;
         while (true) {
             int rIdx = (int) (Math.random() * (cards.length));
             c = cards[rIdx];

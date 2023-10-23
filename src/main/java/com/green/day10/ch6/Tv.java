@@ -3,9 +3,8 @@ package com.green.day10.ch6;
 public class Tv {
     //day10.ch6.TvTest, TvTest2와 함께 보기.
 
-    // 속성 = 멤버 필드, property ,
-    //전역변수인 멤버필드만 디폴드를 가지고 있음 , 디폴트 값이 없는건?????????????
-    String color; // 디폴드 : null
+    String color; // 디폴드 : null = 주소값이 없음.
+    // 참조
     boolean power;// 디폴드 : false
     int channel;// 디폴드 : 0
 
@@ -20,7 +19,6 @@ public class Tv {
     void channelDown () { channel--;}
 }
  /*
-객체는 속성(= 멤버필드, property//명사형식)(값과관련된) + 메소드( = 전역변수, 멤버메소드//동사형식)(움직임과 관련된)
 클래스 : 객체를 만드는 문서, 설계도, 설명
 객체 = Object, 인스턴스, Instance : 클래스를 보고 만듦.
 

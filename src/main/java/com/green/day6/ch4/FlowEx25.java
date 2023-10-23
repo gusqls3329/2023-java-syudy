@@ -13,9 +13,10 @@ public class FlowEx25 {
         System.out.println("숫자를 입력하세요. (예:12345) >> ");
         num = scan.nextInt();
         while (num != 0) {
-            int modval = num % 10;
-        num = num /10;
-        sum += modval;
+            int modval = num % 10; //일의자리 숫자 구하기
+        num = num /10; // 일의자리를 제외한 수 구하면 빠져나와 다시 whlil 문에 들어가 일의자리 구하기부터 시작됨.
+        sum = + sum + modval;
+            System.out.printf("sum(%d)= sum(%d)+madval(%d)\n",sum,sum,modval);
         }
         System.out.println("결과 >> "+ sum);
     }
