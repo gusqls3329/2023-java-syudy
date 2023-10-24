@@ -8,8 +8,9 @@ import java.util.*; //아래 두개를 줄이는법 : *붙이기
 
 public class ArrayListTest {
     public static void main(String[] args) {
-        List list = new ArrayList(); //상속관계 : 이름이 달라서  List: 부모, 부모class는 자식 class를 담을 수 있기 때문에
-        list.add(10);
+        List list = new ArrayList();//상속관계 : 이름이 달라서  List: 부모, 부모class는 자식 class를 담을 수 있기 때문에
+        List list1 = new LinkedList(); //ArrayList: 배열로 처리, add할 때 마다 방을 만들고 위의 값 복사(읽기만 할때 유리) , LinkedList:node로 처리(수정이 많이할 때 유리) , ArrayList와 LinkedList는 결과값은 같음
+        list.add(10); //기존에는 방이 0개 방이기 때문에 add를 해줘야 방이 생김,
         list.add(10.3f);
         list.add(10.3d);
         list.add(103l);
@@ -36,8 +37,8 @@ public class ArrayListTest {
 class ArrayListTest2{
     public static void main(String[] args) {
         int v1 = 10;
-        Integer v2 = 10;
-        System.out.println(v1 == v2);
+        Integer v2 = 10; //Integer:기본형의 객체형
+        System.out.println(v1 == v2); //<Integer>:을 주지않으면 아무거나(정수ㅡ, 문자, 실수,,,등)들어가기 때문에 래퍼클래스를 넣어줘야좋음
         List<Integer>list = new ArrayList(); //p.491 <Integer>: <>:안에는 기본형을 사용할 수 없구, 래퍼클래스만 넣어야한다. 출력의 타입을 같게 하기위해 사용
         list.add(10); //값넣기 : add (대입연산자(=)를 사용하는게 아닌 추가한다는 뜻) boolean타입(return 메소드)이지만 작성하지 않음 void처럼 보임,
         // list.add(10.3f); Integer로 타입을 정했기 때문에 정수만 사용이 가능하다.
@@ -47,7 +48,7 @@ class ArrayListTest2{
         list.add(20);
         list.add(30);
         list.add(45);
-        System.out.println( list.get(1)); // 바른 방을 출력하고 싶다면 list.add를 해야함
+        System.out.println( list.get(1)); // 다른 방을 출력하고 싶다면 list.add를 해야함
         System.out.println("size : "+ list.size()); // 방크기를 알 수 있는 코드
 
         for (int i = 0; i < list.size(); i++) {

@@ -1,9 +1,27 @@
 package com.green.day17.ch17;
 
-public class PolyArgumentTestVer2 {
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+public class PolyArgumentTestVer2_T {
     public static void main(String[] args) {
         Product2 p = new Product2("제품명", 1000);
         System.out.println(p);
+    }
+}
+
+ class PolyArgumentTestVer2_4 {
+    public static void main(String[] args) {
+        Buyer3 buyer = new Buyer3();
+        buyer.buy(new Computer2());
+        buyer.buy(new Computer2());
+        buyer.buy(new Computer2());
+        buyer.buy(new Tv2());
+        buyer.buy(new Audio2());
+        buyer.buy(new Audio2());
+        buyer.summary();
     }
 }
 
@@ -158,5 +176,72 @@ class Product2 {
     @Override
     public String toString() {
         return String.format("name: %s, price: %d, bonusPoint: %d", name, price, bonusPoint);
+    }
+}
+
+
+class Buyer3 {
+    //money(정수) 저장 가능
+    //bonusPoint(정수) 저장 가능
+    //Product2 객체의 주소값 여러개 저장 가능
+    private int money;
+    private int bonusPoint;
+    private Product2[] productArr;
+    private int i;
+    private Map<String, Integer> buyItems;
+
+    public Buyer3() {
+        buyItems = new HashMap();
+        this.money = 3500;
+        this.bonusPoint = 0;
+        productArr = new Product2[10];
+    }
+
+    public void buy(Product2 p) {
+        if(p == null) {
+            System.out.println("잘못 구매하셨습니다.");
+            return;
+        }
+        if(i == productArr.length) {
+            System.out.println("담을 수 있는 공간이 없습니다.");
+            return;
+        }
+        if(money < p.getPrice()) {
+            System.out.println("금액이 부족합니다.");
+            return;
+        }
+        productArr[i++] = p;
+        money -= p.getPrice();
+        bonusPoint += p.getBonusPoint();
+        String productName = p.getName();
+        if(buyItems.containsKey(productName)){
+            buyItems.put(productName,buyItems.get(productName)+1);
+        } else {
+            buyItems.put(productName, 1);
+        }
+        System.out.printf("%s을(를) 구매하였습니다.\n", p.getName());
+    }
+
+    public void summary() {
+        int sum = 0;
+        for(Product2 p : productArr) {
+            if(p == null) { break; }
+            sum += p.getPrice();
+        }
+        System.out.printf("총 구매금액: %,d, 남은금액: %,d, 보너스 포인트: %,d\n", sum, money, bonusPoint);
+        /*
+        System.out.printf("%s: %d대", productNames[0], productCnts[0]);
+        for(int i=1; i<productNames.length; i++) {
+            System.out.printf(", %s: %d대", productNames[i], productCnts[i]);
+        }
+         */
+        Set <String>namesSet = buyItems.keySet();
+        Iterator<String> iterator = namesSet.iterator();
+        while (iterator.hasNext()){
+            String Key = (String) iterator.next();
+            int cnt = buyItems.get(Key);
+            System.out.printf("%s: %d대", Key, cnt);
+        }
+        System.out.println("를 구매하였습니다.");
     }
 }
