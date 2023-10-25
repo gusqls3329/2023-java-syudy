@@ -34,3 +34,5 @@ class VideoPlayer extends Player {
         System.out.println("Video Player 위치 : " + pos);
     }
 }
+abstract class DvdPlayer extends Player{
+}
