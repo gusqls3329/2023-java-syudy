@@ -44,3 +44,16 @@ class MyConnTest3{
         System.out.println("row:" +row);
     }
 }
+
+class MyConnTest4{
+    public static void main(String[] args) {
+        BoardEntity entity  = new BoardEntity();
+        entity.setIboard(3);
+
+        entity.setTitle("수정제목");
+        entity.setCtnts("수정 내용");
+        entity.setWriter("수정자");
+        int row = BoardDao.upBoard(entity);
+        System.out.println("row:" +row);
+    }
+}
