@@ -55,4 +55,10 @@ public class BoardEntity {
     public void setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
     }
+    @Override
+    public String toString(){
+        return String.format("iboard : %d, title : %s, ctnts : %s, writer : %s, createdAt : %s"
+                , iboard, title, ctnts, writer, created_at);
+
+    }
 }

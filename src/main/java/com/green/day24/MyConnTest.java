@@ -3,6 +3,7 @@ package com.green.day24;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 public class MyConnTest {
     public static void main(String[] args) {
@@ -55,5 +56,21 @@ class MyConnTest4{
         entity.setWriter("수정자");
         int row = BoardDao.upBoard(entity);
         System.out.println("row:" +row);
+    }
+}
+class MyConnTest5 {
+    public static void main(String[] args) {
+        List<BoardEntity> list =BoardDao.selBoardList(3);
+        for (BoardEntity entity : list){
+            System.out.println(entity);
+
+        }
+    }
+}
+
+class MyConnTest6{
+    public static void main(String[] args) {
+        BoardEntity result = BoardDao.selBoardById(3);
+        System.out.println(result);
     }
 }

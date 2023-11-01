@@ -74,8 +74,8 @@ public class BoardDao {//Dao : 데이터 엑세스 오브젝트
         return result;
     }
 
-        public static List<BoardEntity> selBoardList(){
-            List<BoardEntity> list = new ArrayList();
+        public static List<BoardEntity> selBoardList(int i){
+            List<BoardEntity> list = new ArrayList(); //
             Connection con = null;
             PreparedStatement ps = null;
             ResultSet rs = null;
@@ -85,6 +85,20 @@ public class BoardDao {//Dao : 데이터 엑세스 오브젝트
                 con = MyConn.getConn();
                 ps = con.prepareStatement(sql);
                 rs = ps.executeQuery();
+                while (rs.next()){ //레코드가 있는 수만큼 반복됨
+                    int iboard = rs.getInt("iboard");
+                    String title = rs.getString("title");
+                    String writer = rs.getString("writer");
+                    String createdAt = rs.getString("created_at");
+                    BoardEntity entity = new BoardEntity();
+                    entity.setIboard(iboard);
+                    entity.setTitle(title);
+                    entity.setWriter(writer);
+                    entity.setCreated_at(createdAt);
+                    list.add(entity);
+                }
+               /* if (rs.next()){ //한줄만 있는지 없는지 확인할때
+                }*/
             }catch (Exception e){
                 e.printStackTrace();
             }finally {
@@ -92,4 +106,37 @@ public class BoardDao {//Dao : 데이터 엑세스 오브젝트
             }
             return list;
         }
+    public static BoardEntity selBoardById(int k){
+        BoardEntity result =  new BoardEntity();
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        String sql = " SELECT iboard, title, writer, created_at FROM board WHERE iboard = ?";
+        try {
+            conn = MyConn.getConn();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, k);
+            rs = ps.executeQuery();
+
+            while (rs.next()){ //레코드가 있는 수만큼 반복됨
+                int iboard = rs.getInt("iboard");
+                String title = rs.getString("title");
+                String writer = rs.getString("writer");
+                String createdAt = rs.getString("created_at");
+
+                result.setIboard(iboard);
+                result.setTitle(title);
+                result.setWriter(writer);
+                result.setCreated_at(createdAt);
+
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            MyConn.close(conn, ps,rs);
+        }
+        return result;
+    }
 }
