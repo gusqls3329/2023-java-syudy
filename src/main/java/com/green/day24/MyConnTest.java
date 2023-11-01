@@ -39,7 +39,7 @@ class MyConnTest2{
 class MyConnTest3{
     public static void main(String[] args) {
         BoardEntity entity  = new BoardEntity();
-        entity.setIboard(1);
+        entity.setIboard(3);
 
         int row = BoardDao.delBoard(entity);
         System.out.println("row:" +row);
@@ -60,7 +60,7 @@ class MyConnTest4{
 }
 class MyConnTest5 {
     public static void main(String[] args) {
-        List<BoardEntity> list =BoardDao.selBoardList(3);
+        List<BoardEntity> list =BoardDao.selBoardList();
         for (BoardEntity entity : list){
             System.out.println(entity);
 
@@ -70,7 +70,7 @@ class MyConnTest5 {
 
 class MyConnTest6{
     public static void main(String[] args) {
-        BoardEntity result = BoardDao.selBoardById(3);
+        BoardEntity result = BoardDao.selBoardById(4);
         System.out.println(result);
     }
 }
