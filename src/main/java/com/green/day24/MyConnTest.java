@@ -6,11 +6,11 @@ import java.sql.SQLException;
 
 public class MyConnTest {
     public static void main(String[] args) {
-        Connection conn = MyConn.getConn();
+        Connection con = MyConn.getConn();
         String sql = "INSERT INTO country( country) VALUES('동하나라')";
 
         try {
-            PreparedStatement ps = conn.prepareStatement(sql);
+            PreparedStatement ps = con.prepareStatement(sql);
             int result = ps.executeUpdate();
             System.out.println("result: "+result);
         } catch (Exception e) {
@@ -27,10 +27,20 @@ class MyConnTest2{
         writer: 홍길동
          */
         BoardEntity entity  = new BoardEntity();
-        entity.setTitle("오늘 Insert배움");
-        entity.setCtnts("java를 통해 board테이블에 값 넣어봄");
-        entity.setWriter("신난다");
+        entity.setTitle("나는");
+        entity.setCtnts("지금");
+        entity.setWriter("배고프다");
         BoardDao.insBoard(entity);
 
+    }
+}
+
+class MyConnTest3{
+    public static void main(String[] args) {
+        BoardEntity entity  = new BoardEntity();
+        entity.setIboard(1);
+
+        int row = BoardDao.delBoard(entity);
+        System.out.println("row:" +row);
     }
 }

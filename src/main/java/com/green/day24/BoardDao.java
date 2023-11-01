@@ -13,9 +13,11 @@ public class BoardDao {//Dao : 데이터 엑세스 오브젝트
                 "(?,?,?)";
 
         System.out.println(sql);
+        Connection con = null;
+        PreparedStatement ps = null;
         try {
-            Connection conn = MyConn.getConn();
-            PreparedStatement ps = conn.prepareStatement(sql);
+            con = MyConn.getConn();
+            ps = con.prepareStatement(sql);
             ps.setString(1, entity.getTitle());
             ps.setString(2, entity.getCtnts());
             ps.setString(3, entity.getWriter());
@@ -24,26 +26,27 @@ public class BoardDao {//Dao : 데이터 엑세스 오브젝트
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-
+            MyConn.close(con,ps);
+        }
+        return result;
+    }
+    public static int delBoard(BoardEntity entity){
+        int result = 0;
+        Connection conn = null;
+        PreparedStatement ps = null;
+        String sql = "DELETE FROM board WHERE iboard = ?";
+        try {
+            conn = MyConn.getConn();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, entity.getIboard());
+            result = ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+        MyConn.close(conn,ps);
         }
         return result;
     }
 
-    public static void close(Connection conn, PreparedStatement ps) {
-        if (ps != null) {
-            try {
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        if (conn != null) {
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
 
-    }
 }
