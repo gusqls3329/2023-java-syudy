@@ -28,9 +28,9 @@ class MyConnTest2{
         writer: 홍길동
          */
         BoardEntity entity  = new BoardEntity();
-        entity.setTitle("나는");
-        entity.setCtnts("지금");
-        entity.setWriter("배고프다");
+        entity.setTitle("오늘은");
+        entity.setCtnts("11/02");
+        entity.setWriter("입니다");
         BoardDao.insBoard(entity);
 
     }

@@ -11,7 +11,11 @@ public class BoardDao {//Dao : 데이터 엑세스 오브젝트
 
     public static int insBoard(BoardEntity entity) { //static or singleton둘중 하나를 사용해서 만들어야함.
         int result = 0;
-        String sql = "INSERT INTO board (title,ctnts,writer) " + "VALUES" + "(?,?,?)";
+       /* String sql = "INSERT INTO board (title,ctnts,writer) " + "VALUES" + "(?,?,?)";*/
+        String sql = "INSERT INTO board " +
+                     "SET title = ?"+
+                     ", ctnts = ?"+
+                     ", writer = ?";
 
         System.out.println(sql);
         Connection con = null;
