@@ -1,10 +1,12 @@
-package com.green.day29.normal;
+package com.green.day29.normal2;
+
+import com.green.day29.Woofer;
 
 public class AppleSpeaker {
-    private HanilWoofer woofer;
+    private Woofer woofer;
 
     public AppleSpeaker(){
-        woofer = new HanilWoofer();
+        woofer = new HansungWoofer();
     }
     public void sound(){
         System.out.println("애플스피커: 소리 소리 소리");
