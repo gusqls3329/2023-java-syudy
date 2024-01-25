@@ -1,4 +1,4 @@
-package com.green.day29.normal2;
+package com.green.day29.ioc;
 
 import com.green.day29.Speaker;
 import com.green.day29.Woofer;
@@ -6,8 +6,8 @@ import com.green.day29.Woofer;
 public class AppleSpeaker implements Speaker {
     private Woofer woofer;
 
-    public AppleSpeaker(){
-        woofer = new HansungWoofer();
+    public AppleSpeaker(Woofer woofer){
+        this.woofer = woofer;
     }
     public void sound(){
         System.out.println("애플스피커: 소리 소리 소리");
