@@ -46,7 +46,7 @@ class Toy{
     }
 }
 class GBoxList<T> { //원래 ArrayList에 있는 대표 기능 3가지만 감싼내용
-    private List<T> list = new ArrayList<>();
+    List<T> list = new ArrayList<>();
      void add(T item) {
          list.add(item);
      }
