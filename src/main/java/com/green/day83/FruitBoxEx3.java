@@ -34,6 +34,9 @@ class Juice{
 
 class Juicer{
     static Juice makeJuice(FruitBox<? extends Fruit> box){
+        //? : 와일드카드로 와일드카드만 extends, super를 사용할 수 있다. 아무것도 안적었을 경우 타입에 아무거나 들어올수 있다
+        //super : 최소가 자기자신, 자기자신과 부모만 뜻함
+        // extends : 최대가 자기자신, 자신과 자식을 뜻함
         //Fruit만 받을 수 있음 FruitBox<?> box 전부다 사용할 수 있음
        // FruitBox<? extends Fruit> box : Fruit과 그 자식만 사용할 수있음
         String temp = "";
