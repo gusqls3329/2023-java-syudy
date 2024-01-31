@@ -11,7 +11,6 @@ public class StreamEx4 {
                 , new File("Ex2.txt")
         };
         Stream<File> fileStream = Stream.of(fileArr); //프라머티브 타입이 아닐 경우 :Stream.of
-        // //프라머티브 타입일 경우Stream<File> fileStream = Stream.of(fileArr).boxed();
         Stream<String> strStream = fileStream.map(item -> item.getName());
         strStream.forEach(System.out::println);
 

@@ -10,7 +10,6 @@ public class StreamEx2 {
     //무한 스트림 > 꼭 유한 스트림을 사용해야함
     public static void main(String[] args) {
         Random r = new Random();
-
         IntStream intStream = r.ints();
 
         intStream.limit(10).forEach( System.out::println);
